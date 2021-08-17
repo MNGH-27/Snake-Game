@@ -10,21 +10,51 @@ body{
 
 header{
     display: flex;
+    justify-content: space-between;
+}
+
+.top-score{
+    background-color: orange;
+    height: 50px;
+    padding: 0px 10px;
+    line-height: 15px;
+    border-radius: 0px 0px 15px 0px;
+    box-shadow: 0px 0px 15px 5px rgb(245, 173, 38);
+    transition: all 0.3s ease;
+}
+
+.top-score:hover,
+.score:hover{
+    box-shadow: 0px 0px 15px 10px rgb(245, 173, 38);
+}
+
+.score{
+    background-color: orange;
+    height: 50px;
+    padding: 0px 10px;
+    line-height: 15px;
+    border-radius: 0px 0px 0px 15px;
+    box-shadow: 0px 0px 15px 5px rgb(245, 173, 38);
+    transition: all 0.3s ease;
+}
+
+.menu{
+    display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     text-align: center;
     background-color: rgb(42, 195, 206);
     width: 60%;
-    margin: 0px auto;
+    margin-top: 0px;
     margin-bottom: 45px;
     border-radius: 0px 0px 20px 20px;
     box-shadow: 0px 0px 15px 10px rgb(0, 255, 242);
-    height: 45px;
+    height: 50px;
     overflow: hidden;
     transition: all 0.5s ease;
 }
 
-header:hover{
+.menu:hover{
     height: 100px;
 }
 
@@ -38,31 +68,120 @@ header:hover{
     border-radius: 10px;
     border: none;
     background-color: rgb(117, 180, 252);
-    box-shadow: 0px 0px 2px 2px rgb(111, 111, 196);
+    box-shadow: 0px 0px 9px 2px rgb(111, 111, 196);
     transition: all 0.3s ease;
 }
 
 #btn-newgame:hover,
 #btn-pause:hover{
-    box-shadow: 0px 0px 7px 5px rgb(111, 111, 196);
+    box-shadow: 0px 0px 15px 5px rgb(111, 111, 196);
 }
 
-header h1{
+.menu h1{
     margin: 0px;
 }
 
+.hide-div{
+    display: none !important;
+}
+
+.fixed-div{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 80%;
+    height: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px;
+    opacity: .9;
+    background-color: rgb(78, 219, 238);
+}
+
+.fixed-div-title{
+    font-size: 50px;
+    margin: 0px;
+}
+
+/*Class use in js new game*/
+.btn-selected{
+    background-color: rgb(255, 115, 0) !important;
+    box-shadow: 0px 0px 9px 2px rgb(247, 132, 38) !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-selected:hover{
+    box-shadow: 0px 0px 15px 5px rgb(247, 132, 38) !important;
+}
+/*End */
+
+.btn-gameselector{
+    padding: 15px 50px;
+    margin: 0px 15px;
+    font-size: 25px;
+    border-radius: 15px;
+    border: none;
+    background-color: #75B4FC;
+    box-shadow: 0px 0px 9px 2px rgb(111, 111, 196);
+    transition: all 0.3s ease;
+}
+
+.btn-gameselector:hover{
+    box-shadow: 0px 0px 15px 5px rgb(111, 111, 196);
+}
+
+.btn-start{
+    padding: 20px 60px;
+    margin: 20px 0px;
+    font-size: 35px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(141, 94, 6);
+    box-shadow: 0px 0px 9px 2px rgb(141, 94, 6);
+    transition: all 0.5s ease;
+}
+
+.btn-start:hover{
+    background-color: orange;
+    box-shadow: 0px 0px 15px 5px orange;
+}
+/*Image*/
+.image-size{
+    width: 50%;
+    height: 50%;
+
+}
+.image-left{
+    transform: rotate(0deg);
+}
+.image-up{
+    transform: rotate(90deg);
+}
+.image-right{
+    transform: rotate(180deg);
+}
+.image-bottom{
+    transform: rotate(270deg);
+}
+/*End Image*/
 .container{
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
+    margin-bottom: 20px;
     display: grid;
-    grid-template-columns: 14% 14% 14% 14% 14% 14% 14%;
-    height: 100vh;
+    height: 95vh;
     grid-gap: 3px;
     box-shadow: 0px 0px 15px 10px rgb(84, 122, 226);
 }
 
 .col{
-    height:100px;
     background-color: blue;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

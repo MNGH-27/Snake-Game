@@ -12,54 +12,40 @@
 </head>
 <body>
     <header>
-        <button id="btn-newgame" type="button">new game</button>
-        <h1>Snake</h1>
-        <button id="btn-pause" type="button">pause</button>
-        <p>in this game you Should eat apple and try to don't collision to the wall and your self</p>
+        <div class="top-score">
+            <p>Topscore : <span class="top-score-value">2314</span></p>
+        </div>
+        <div class="menu">
+            <button id="btn-newgame" type="button">new game</button>
+            <h1>Snake</h1>
+            <button id="btn-pause" type="button">pause</button>
+            <p>in this game you Should eat apple and try to don't collision to the wall and your self</p>
+        </div>
+        <div class="score">
+            <p>Score : <span class="score-value">2314</span></p>
+        </div>
     </header>
-    <div class="container">
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
+
+    <div class="fixed-div hide-div">
+        <h1 class="fixed-div-title">Choose your game</h1>
+        <div class="btn-container">
+            <button  class="btn-gameselector" type="button" value="10">10*10</button>
+            <button  class="btn-gameselector" type="button" value="12">12*12</button>
+            <button  class="btn-gameselector" type="button" value="15">15*15</button>
+        </div>
+        <button class="btn-start" type="button">Start Game</button>
     </div>
+
+    <div class="fixed-div hide-div">
+        <h1 class="fixed-div-title">Game is puased</h1>
+        <h2>Tip : you can use Upkey , Downkey , Leftkey , Rightkey to move Snake</h2>
+        <button type="button" class="btn-start">Resume</button>
+    </div>
+
+    <div class="container" id="container">
+        
+    </div>
+
+    <script src="main.js"></script>
 </body>
 </html>
