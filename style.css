@@ -40,8 +40,9 @@ header{
 
 .menu{
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
     text-align: center;
     background-color: rgb(42, 195, 206);
     width: 60%;
@@ -55,7 +56,12 @@ header{
 }
 
 .menu:hover{
-    height: 100px;
+    height: 120px;
+}
+
+.top-menu{
+    display: flex;
+    justify-content: space-around;
 }
 
 #btn-newgame,
@@ -152,9 +158,9 @@ header{
 }
 /*Image*/
 .image-size{
-    width: 50%;
-    height: 50%;
-
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
 }
 .image-left{
     transform: rotate(0deg);
