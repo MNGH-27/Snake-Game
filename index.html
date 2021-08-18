@@ -17,9 +17,9 @@
         </div>
         <div class="menu">
             <div class="top-menu">
-                <button id="btn-newgame" type="button">new game</button>
+                <button onclick="menu_new_game()" id="btn-newgame" type="button">new game</button>
                 <h1>Snake</h1>
-                <button id="btn-pause" type="button">pause</button>
+                <button onclick="pause_game()" id="btn-pause" type="button">pause</button>
             </div>
             <p>in this game you Should eat apple and try to don't collision to the wall and your self
             <br> use up:'w' , down:'s' , left:'a' ,right: 'd'</p>
@@ -39,10 +39,16 @@
         <button onclick="Start_Game()"  class="btn-start" type="button">Start Game</button>
     </div>
 
-    <div class="fixed-div hide-div">
+    <div id="puase" class="fixed-div hide-div">
         <h1 class="fixed-div-title">Game is puased</h1>
         <h2>Tip : you can use up:'w' , down:'s' , left:'a' ,right: 'd' to move Snake</h2>
-        <button type="button" class="btn-start">Resume</button>
+        <button onclick="resume_game()" type="button" class="btn-start">Resume</button>
+    </div>
+
+    <div id="loose" class="fixed-div hide-div">
+        <h1 class="fixed-div-title">You loose</h1>
+        <h2>your score is : <span class="score-value">2314</span> <span style="color:orange;" >AND</span>  Top Score is : <span class="top-score-value">2314</span></h2>
+        <button onclick="new_game()"  class="btn-start" type="button">New Game</button>
     </div>
 
     <div class="container" id="container">
