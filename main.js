@@ -3,6 +3,7 @@ const container = document.getElementById("container");
 const newGame_Div = document.getElementById("new-game");
 const loose_Div = document.getElementById("loose");
 const pause_Div = document.getElementById("puase");
+const win_Div = document.getElementById("win");
 
 const Selecting_btns = document.querySelectorAll(".btn-gameselector");
 
@@ -105,24 +106,34 @@ document.addEventListener("keypress",function move_Snake (event){
 function Create_Apple(){
     if(Eat_apple){
         let Isvalid=true;
+        const Block = document.querySelectorAll(".col");
+        let cycle_turn = 0;
         while(Isvalid){
-            var Rand_number =parseInt(Math.random()*150);
+            var Rand_number = parseInt(Math.random() * 150);
             if(Rand_number<(numberblock*numberblock)-1){
-                const Block = document.querySelectorAll(".col")[Rand_number];
                 let canuse=true;
-                
-                Snake.forEach(function(Sn){//checking to Dont be Snake there
-                    if(Rand_number===Sn.prev_pos||Rand_number===Sn.Current_pos){
-                        canuse=false;
-                    }
-                })
 
+                if(cycle_turn>10){
+                    Block.forEach(function(B,index){
+                        if(B.style.backgroundColor==="blue"){
+                        }else{
+                            canuse=false;
+                        }
+                    })
+                }else{
+                    Snake.forEach(function(Sn){//checking to Dont be Snake there
+                        if(Rand_number===Sn.prev_pos||Rand_number===Sn.Current_pos){
+                            canuse=false;
+                        }
+                    })
+                }
                 if(canuse){
                     Isvalid=false;
                     Eat_apple=false;
-                    Block.style.backgroundColor="red";
+                    Block[Rand_number].style.backgroundColor="red";
                 }
             }
+            cycle_turn++;
         }
     }
 }
@@ -200,6 +211,9 @@ function SnakeMovement(){
             TopScore=Score;
             Topscore_txt.forEach((elem)=>elem.innerHTML=TopScore);
         }
+        if(Snake.length===numberblock){
+
+        }
     }
 
     if(nextDiv.innerHTML===""){//Going forward
@@ -210,8 +224,14 @@ function SnakeMovement(){
             }else{
                 Snake[i].prev_pos=Snake[i].Current_pos;
                 Snake[i].Current_pos=Snake[i-1].prev_pos;
-                document.querySelectorAll(".col")[Snake[i].prev_pos].style.backgroundColor="blue";
-                document.querySelectorAll(".col")[Snake[i].Current_pos].style.backgroundColor="green";
+                const prevBlock = document.querySelectorAll(".col")[Snake[i].prev_pos];
+                const nextBlock = document.querySelectorAll(".col")[Snake[i].Current_pos];
+                if(prevBlock.style.backgroundColor==="red"||nextBlock.style.backgroundColor==="red"){
+                    console.log("it was Apple before");
+                    Eat_apple=true;
+                }
+                prevBlock.style.backgroundColor="blue";
+                nextBlock.style.backgroundColor="green";
             }
         }
     }
@@ -246,6 +266,14 @@ function menu_new_game(){
     clearInterval(Snakemover);
     clearInterval(appleCreator);
     loose_Div.classList.remove(hide_class_name);
+    new_game;
+}
+
+function Win_game(){
+    container.innerHTML="";
+    clearInterval(Snakemover);
+    clearInterval(appleCreator);
+    win_Div.classList.remove(hide_class_name);
     new_game;
 }
 
